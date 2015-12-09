@@ -30,18 +30,21 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/login', {
-        templateUrl: '/views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
-      })
+      // .when('/login', {
+      //   templateUrl: '/views/login.html',
+      //   controller: 'LoginCtrl',
+      //   controllerAs: 'login'
+      // })
       .otherwise({
         redirectTo: '/'
       });
-    //   $stateProvider
-    //     .state('login', {
-    //       url: '/login',
-    //       templateUrl: '/views/login.html',
-    //       controller: 'LoginCtrl'
-    // })
+  })
+  .config(function($stateProvider) {
+    $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: '/views/login.html',
+      controller: 'LoginCtrl'
+    });
   });
+
